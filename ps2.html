@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+</head>
+<body>
+    <h1>Creating JS Class for Book</h1>
+    
+    <div id="book-details"></div>
+
+    <script>
+        // Step 1: Create class Book
+        class Book {
+            // Step 2: Add constructor with properties
+            constructor(id, name, author, price) {
+                this.id = id;
+                this.name = name;
+                this.author = author;
+                this.price = price;
+            }
+
+            // Step 3: Add method showDetails() to render book details and log them to the console
+            showDetails() {
+                // Display book details on the webpage
+                const detailsDiv = document.getElementById("book-details");
+                detailsDiv.innerHTML = `
+                    <h2>Book Details</h2>
+                    <p><strong>Book Id:</strong> ${this.id}</p>
+                    <p><strong>Book Name:</strong> ${this.name}</p>
+                    <p><strong>Book Author:</strong> ${this.author}</p>
+                    <p><strong>Book Price:</strong> ${this.price}</p>
+                `;
+
+                // Log book details to the console
+                console.log("Book Details");
+                console.log("Book Id: " + this.id);
+                console.log("Book Name: " + this.name);
+                console.log("Book Author: " + this.author);
+                console.log("Book Price: " + this.price);
+            }
+        }
+
+        // Step 4: Instantiate the Book object
+        const myBook = new Book(13455, 'Mrityunjay', 'Shivaji Sawant', 4350.55);
+
+        // Step 5: Display Book Details by calling showDetails() method
+        myBook.showDetails();
+    </script>
+</body>
+</html>

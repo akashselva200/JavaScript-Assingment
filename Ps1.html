@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        #product-details {
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        </style>
+</head>
+<body>
+    <div id="product-details" style="width: 300px; padding: 2px; font-size: small; "></div>
+
+    <script>
+        // Step 1: Create Product object using Object Prototype
+        function Product(productid, productName, productPrice) {
+            this.productid = productid;
+            this.productName = productName;
+            this.productPrice = productPrice;
+        }
+
+        // Step 2: Add a method showDetails() to the Product object
+        Product.prototype.showDetails = function() {
+            const detailsDiv = document.getElementById("product-details");
+            detailsDiv.innerHTML = `
+                <p>====================================</p>
+                <p>Creating JS Object using Object Prototype</p>
+                <p>====================================</p>
+                <p>Product Details</p>
+                <p>====================================</p>
+                <p>Product Id : ${this.productid}</p>
+                <p>====================================</p>
+                <p>Product Name : ${this.productName}</p>
+                <p>====================================</p>
+                <p>Product Price : ${this.productPrice}</p>
+                <p>====================================</p>
+            `;
+            // Log details to the console
+            console.log('Creating JS Object using Object Prototype');
+            console.log('============================');
+            console.log(`Product Id: ${this.productid}`);
+            console.log('============================');
+            console.log(`Product Name: ${this.productName}`);
+            console.log('============================');
+            console.log(`Product Price: ${this.productPrice}`);
+            console.log('============================');
+        };
+
+        // Step 3: Instantiate the Product object
+        const myProduct = new Product(101, 'Laptop', 45000);
+
+        // Step 4: Display Product Details by calling showDetails() method
+        myProduct.showDetails();
+    </script>
+</body>
+</html>
